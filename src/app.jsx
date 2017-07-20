@@ -11,9 +11,12 @@ import PortfolioPage from './components/PortfolioPage';
 import ContactPage from './components/ContactPage';
 
 const MENU_ITEMS = [
-  { name: 'Home', path: '/', appearInSideBar: true, appearInTopMenuBar: true, appearInBottomMenuBar: true, icon: 'home' },
-  { name: 'About', path: 'about', appearInSideBar: true, appearInTopMenuBar: true, appearInBottomMenuBar: true, icon: 'person' },
-  { name: 'Portfolio', path: 'portfolio', appearInSideBar: true, appearInTopMenuBar: true,appearInBottomMenuBar: true, icon:'work'},{ name: 'Contact', path: 'contact', appearInSideBar: true, appearInTopMenuBar: true, appearInBottomMenuBar: true, icon: 'email' }
+  { name: 'Home', path: '/', appearInSideBar: true, appearInTopMenuBar: true, appearInBottomMenuBar: true, icon: 'fa fa-home fa-2x' },
+  { name: 'About', path: 'about', appearInSideBar: true, appearInTopMenuBar: true, appearInBottomMenuBar: true, icon: 'fa fa-info-circle fa-2x' },
+  { name: 'Portfolio', path: 'portfolio', appearInSideBar: true, appearInTopMenuBar: true,appearInBottomMenuBar: true, icon:'fa fa-briefcase fa-2x'},
+  { name: 'Contact', path: 'contact', appearInSideBar: true, appearInTopMenuBar: true, appearInBottomMenuBar: true, icon: 'fa fa-envelope fa-2x' },
+  { name: 'GitHub', path: 'https://github.com/lippyDesign', appearInSideBar: true, appearInTopMenuBar: false, appearInBottomMenuBar: true, icon: 'fa fa-github fa-2x' },
+  { name: 'LinkedIn', path: 'https://www.linkedin.com/feed/', appearInSideBar: true, appearInTopMenuBar: false, appearInBottomMenuBar: true, icon: 'fa fa-linkedin fa-2x' }
 ];
 
 class App extends React.Component {

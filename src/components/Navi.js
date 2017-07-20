@@ -43,8 +43,16 @@ class Navi extends React.Component {
   handleDrawerToggle = () => this.setState({ open: !this.state.open });
 
   handleNavButtonPress(path) {
-    this.setActiveNaviItem(path);
-    this.props.history.push(path);
+    var firstThreeChars = path.substring(0, 3);
+    // if first 3 characters of the path are htt or wwww,
+    // than we know tha the path is to another website, so we'll open it in a new window
+    if (firstThreeChars === 'htt' || firstThreeChars === 'wwww') {
+      window.open(path)
+    } else {
+      // else we know the path is to this website, so we'll use react router to navigate
+      this.setActiveNaviItem(path);
+      this.props.history.push(path);
+    }
   }
 
   setActiveNaviItem(path) {
@@ -87,6 +95,7 @@ class Navi extends React.Component {
     if (this.state.screenWidth < 875) {
       return (
         <Drawer
+          disableSwipeToOpen
           openSecondary
           docked={false}
           open={this.state.open}
@@ -98,28 +107,15 @@ class Navi extends React.Component {
     }
   }
 
+  // only visible on small screens
   renderBottomMenuBar() {
-    // Filter to only have bottom menu items
-    // And set up the index of the bottom menu order as BottomNavigation requires an index to highlight active item
     // we are only rendering the bottom menu on small screens
     if (this.state.screenWidth < 875) {
-      const bottomMenuItems = [];
-      const indexTable = {}
-      let i = 0
-      this.props.menuItems.forEach(item => {
-        if (item.appearInBottomMenuBar) {
-          bottomMenuItems.push(item);
-          // Home shows up as empty string as there is no route, so we'll set it up as such
-          if (item.name === 'Home') indexTable[''] = i;
-          else indexTable[item.name] = i;
-          i++;
-        }
-      });
-      let activeIndex = indexTable[this.state.activeNaviItem.replace('| ', '')]
-
       return <Paper zDepth={1} style={{position: 'fixed', bottom: 8, left: 8, right: 8}}>
-        <BottomNavigation selectedIndex={activeIndex}>
-          {this.renderBottomMenuBarItems(bottomMenuItems)}
+        <BottomNavigation>
+          <div className='bottomMenuBox'>
+            {this.renderBottomMenuBarItems()}
+          </div>
         </BottomNavigation>
       </Paper>;
     }
@@ -132,7 +128,7 @@ class Navi extends React.Component {
       let menuButtonColor = item.name === this.state.activeNaviItem.replace('| ', '') ? 'rgb(0, 188, 212)' : '#000';
       if (item.name === 'Home' && this.state.activeNaviItem === '') menuButtonColor = 'rgb(0, 188, 212)';
       return <MenuItem key={item.path} innerDivStyle={{textAlign: 'center', paddingLeft: 70, display:'flex', alignItems:'center', color: menuButtonColor }} onTouchTap={() => this.handleNavButtonPress(item.path)}>
-        <i className="material-icons sideBarIcon">{item.icon}</i> {item.name}
+        <i className={`${item.icon} sideBarIcon`}></i> {item.name}
       </MenuItem>;
     });
   }
@@ -142,7 +138,7 @@ class Navi extends React.Component {
     const topMenuBarItems = this.props.menuItems.filter(item => item.appearInTopMenuBar);
     return topMenuBarItems.map(item => {
       // make icon
-      const icon = <FontIcon className="material-icons">{item.icon}</FontIcon>
+      const icon = this.makeIcon(item.icon)
       // set color on active menu item
       let menuButtonColor = item.name === this.state.activeNaviItem.replace('| ', '') ? {color:'rgb(0, 188, 212)', backgroundColor: '#FFFFFF'} : {color:'#FFFFFF', backgroundColor: 'rgb(0, 188, 212)'};
       if (item.name === 'Home' && this.state.activeNaviItem === '') menuButtonColor = {color:'rgb(0, 188, 212)', backgroundColor: '#FFFFFF'};
@@ -150,12 +146,22 @@ class Navi extends React.Component {
     });
   }
 
-  renderBottomMenuBarItems(bottomMenuItems) {
+  renderBottomMenuBarItems() {
+    // filter to only have bottom menu items
+    const bottomMenuItems = this.props.menuItems.filter(item => item.appearInBottomMenuBar);
     return bottomMenuItems.map(item => {
       // make icon
-      const icon = <FontIcon className="material-icons">{item.icon}</FontIcon>
-      return <BottomNavigationItem key={item.name} label={item.name} icon={icon} onTouchTap={() => this.handleNavButtonPress(item.path)} />;
+      const icon = this.makeIcon(item.icon)
+      // set color on active menu item
+      let bottomMenuButtonColor = item.name === this.state.activeNaviItem.replace('| ', '') ? 'bottomMenuButtonActive' : 'bottomMenuButtonNotActive';
+      console.log(item.name, bottomMenuButtonColor)
+      if (item.name === 'Home' && this.state.activeNaviItem === '') bottomMenuButtonColor = 'bottomMenuButtonActive';
+      return <BottomNavigationItem className={`bottomMenuItem ${bottomMenuButtonColor}`} key={item.name} label={item.name} icon={icon} onTouchTap={() => this.handleNavButtonPress(item.path)} />;
     });
+  }
+
+  makeIcon(nameOfIconClass) {
+    return <FontIcon className={nameOfIconClass}></FontIcon>
   }
 
   render() {
