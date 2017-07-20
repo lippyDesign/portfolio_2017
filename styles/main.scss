@@ -1,0 +1,23 @@
+// body {
+//   background: #ece7e7;
+// }
+.App {
+  margin-bottom: 73px;
+  @media(min-width: 875px) {
+    margin-bottom: 0;
+  }
+}
+.topMenuBottomWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.activeMenuItem {
+  color: tomato;
+}
+.topBarMenuItem {
+  color: #fff;
+}
+.sideBarIcon {
+  margin-right: 5px;
+}
