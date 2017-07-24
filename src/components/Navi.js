@@ -13,22 +13,26 @@ import { withRouter } from 'react-router-dom';
 
 class Navi extends React.Component {
 
-  state = { open: false, screenWidth: 0, activeNaviItem: '' };
+  state = { open: false, screenWidth: 0, activeNaviItem: '', isBottomNavActive: false };
 
   componentDidMount() {
     this.updateWindowDimensions();
     window.addEventListener('resize', this.updateWindowDimensions);
+    window.addEventListener('scroll', this.handleScroll);
     // set active navi item on page reload or first load
     this.setActiveNaviItem();
   }
 
   componentWillUnmount() {
     window.removeEventListener('resize', this.updateWindowDimensions);
+    window.removeEventListener('scroll', this.handleScroll);
   }
 
-  updateWindowDimensions = () => {
-    this.setState({ screenWidth: window.innerWidth });
-  }
+  // will get screen dimensions
+  updateWindowDimensions = () => this.setState({ screenWidth: window.innerWidth });
+
+  // will set nav to be inactive anytime user scrolls
+  handleScroll = () => this.setState({ isBottomNavActive: false });
 
   updateTitleStyle() {
     if (this.state.screenWidth <= 430 && this.state.screenWidth > 375) {
@@ -101,7 +105,9 @@ class Navi extends React.Component {
           open={this.state.open}
           onRequestChange={(open) => this.setState({open})}
         >
-          {this.renderSidebarItems()}
+          <div className="sidebarWrapper">
+            {this.renderSidebarItems()}
+          </div>
         </Drawer>
       );
     }
@@ -110,10 +116,12 @@ class Navi extends React.Component {
   // only visible on small screens
   renderBottomMenuBar() {
     // we are only rendering the bottom menu on small screens
+    // navbar may be active (full opacity) or not active (0.6 opacity)
     if (this.state.screenWidth < 875) {
-      return <Paper zDepth={1} style={{position: 'fixed', bottom: 8, left: 8, right: 8}}>
+      const menuStyle = this.state.isBottomNavActive ? { position: 'fixed', bottom: 8, left: 8, right: 8 } : {position: 'fixed', bottom: 8, left: 8, right: 8, opacity: 0.3 }
+      return <Paper zDepth={1} style={menuStyle}>
         <BottomNavigation>
-          <div className='bottomMenuBox'>
+          <div id='bottomMenuBox' className='bottomMenuBox' onClick={() => this.setState({isBottomNavActive: !this.state.isBottomNavActive})}>
             {this.renderBottomMenuBarItems()}
           </div>
         </BottomNavigation>
@@ -125,7 +133,7 @@ class Navi extends React.Component {
     const sideBarItems = this.props.menuItems.filter(item => item.appearInSideBar);
     return sideBarItems.map(item => {
       // set color on active menu item
-      let menuButtonColor = item.name === this.state.activeNaviItem.replace('| ', '') ? 'rgb(0, 188, 212)' : '#000';
+      let menuButtonColor = item.name === this.state.activeNaviItem.replace('| ', '') ? 'rgb(0, 188, 212)' : '#555';
       if (item.name === 'Home' && this.state.activeNaviItem === '') menuButtonColor = 'rgb(0, 188, 212)';
       return <MenuItem key={item.path} innerDivStyle={{textAlign: 'center', paddingLeft: 70, display:'flex', alignItems:'center', color: menuButtonColor }} onTouchTap={() => this.handleNavButtonPress(item.path)}>
         <i className={`${item.icon} sideBarIcon`}></i> {item.name}
@@ -154,8 +162,11 @@ class Navi extends React.Component {
       const icon = this.makeIcon(item.icon)
       // set color on active menu item
       let bottomMenuButtonColor = item.name === this.state.activeNaviItem.replace('| ', '') ? 'bottomMenuButtonActive' : 'bottomMenuButtonNotActive';
-      console.log(item.name, bottomMenuButtonColor)
       if (item.name === 'Home' && this.state.activeNaviItem === '') bottomMenuButtonColor = 'bottomMenuButtonActive';
+      if(!this.state.isBottomNavActive) {
+        // if bottom menu bar is not active, return with no onClick handler to prevent navigation if inactive navabar item is tapped
+        return <BottomNavigationItem className={`bottomMenuItem ${bottomMenuButtonColor}`} key={item.name} label={item.name} icon={icon} />;
+      }
       return <BottomNavigationItem className={`bottomMenuItem ${bottomMenuButtonColor}`} key={item.name} label={item.name} icon={icon} onTouchTap={() => this.handleNavButtonPress(item.path)} />;
     });
   }
