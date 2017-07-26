@@ -79,6 +79,7 @@ class Navi extends React.Component {
         showMenuIconButton={false}
         iconElementRight={<IconButton><MenuIcon /></IconButton>}
         onRightIconButtonTouchTap={this.handleDrawerToggle}
+        style={{backgroundColor: '#333'}}
       />
     }
     // navbar for large screens
@@ -87,6 +88,7 @@ class Navi extends React.Component {
       showMenuIconButton={false}
       titleStyle={this.updateTitleStyle()}
       onTitleTouchTap={() => this.handleNavButtonPress('/')}
+      style={{backgroundColor: '#333'}}
     >
       <div className='topMenuBottomWrapper'>
         {this.renderTopMenuBarItems()}
@@ -148,8 +150,8 @@ class Navi extends React.Component {
       // make icon
       const icon = this.makeIcon(item.icon)
       // set color on active menu item
-      let menuButtonColor = item.name === this.state.activeNaviItem.replace('| ', '') ? {color:'rgb(0, 188, 212)', backgroundColor: '#FFFFFF'} : {color:'#FFFFFF', backgroundColor: 'rgb(0, 188, 212)'};
-      if (item.name === 'Home' && this.state.activeNaviItem === '') menuButtonColor = {color:'rgb(0, 188, 212)', backgroundColor: '#FFFFFF'};
+      let menuButtonColor = item.name === this.state.activeNaviItem.replace('| ', '') ? {color:'#333', backgroundColor: '#FFFFFF'} : {color:'#FFFFFF', backgroundColor: '#333'};
+      if (item.name === 'Home' && this.state.activeNaviItem === '') menuButtonColor = {color:'#333', backgroundColor: '#FFFFFF'};
       return <FlatButton icon={icon} key={item.path} style={menuButtonColor} label={item.name} onTouchTap={() => this.handleNavButtonPress(item.path)} />
     });
   }

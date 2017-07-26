@@ -4,6 +4,7 @@
     margin-bottom: 0;
   }
 }
+// NAVIGATION MENUES
 .topMenuBottomWrapper {
   display: flex;
   justify-content: center;
@@ -27,4 +28,12 @@
 }
 .bottomMenuButtonActive div, .bottomMenuButtonActive span {
   color: rgb(0, 188, 212) !important;
+}
+// CONTACT PAGE
+.contactWrapper {
+  padding: 50px 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
