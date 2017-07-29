@@ -73,6 +73,7 @@ class Navi extends React.Component {
   renderTopMenuBar() {
     if (this.state.screenWidth < 875) { // navbar for small screens
       return <AppBar
+        zDepth={1}
         title={`Vladimir Lipunov ${this.state.activeNaviItem}`}
         titleStyle={this.updateTitleStyle()}
         onTitleTouchTap={() => this.handleNavButtonPress('/')}
@@ -84,6 +85,7 @@ class Navi extends React.Component {
     }
     // navbar for large screens
     return <AppBar
+      zDepth={1}
       title={`Vladimir Lipunov ${this.state.activeNaviItem}`}
       showMenuIconButton={false}
       titleStyle={this.updateTitleStyle()}
@@ -120,7 +122,7 @@ class Navi extends React.Component {
     // we are only rendering the bottom menu on small screens
     // navbar may be active (full opacity) or not active (0.6 opacity)
     if (this.state.screenWidth < 875) {
-      const menuStyle = this.state.isBottomNavActive ? { position: 'fixed', bottom: 8, left: 8, right: 8 } : {position: 'fixed', bottom: 8, left: 8, right: 8, opacity: 0.3 }
+      const menuStyle = this.state.isBottomNavActive ? { zIndex: 100, position: 'fixed', bottom: 8, left: 8, right: 8 } : {zIndex: 100, position: 'fixed', bottom: 8, left: 8, right: 8, opacity: 0.3 }
       return <Paper zDepth={1} style={menuStyle}>
         <BottomNavigation>
           <div id='bottomMenuBox' className='bottomMenuBox' onClick={() => this.setState({isBottomNavActive: !this.state.isBottomNavActive})}>

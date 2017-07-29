@@ -6,7 +6,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 export default class extends React.Component {
   render() {
     return <form style={styles.formStyle} onSubmit={this.props.onFormSubmit}>
-      <Subheader>Send an Email</Subheader>
+      <Subheader className='subHeader'>Send an Email</Subheader>
       <TextField
         hintText="your@email.com"
         floatingLabelText="Email"
