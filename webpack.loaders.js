@@ -6,7 +6,7 @@ module.exports = [
   },
   {
     test: /\.css$/,
-    loaders: ['style-loader', 'css-loader?importLoaders=1'],
+    loaders: ['style-loader', 'css-loader?importLoaders=1', "postcss-loader"],
     exclude: ['node_modules']
   },
   {
@@ -43,5 +43,9 @@ module.exports = [
     test: /\.png/,
     exclude: /(node_modules|bower_components)/,
     loader: "url-loader?limit=10000&mimetype=image/png"
+  },
+  {
+    test: /\.pdf$/,
+    loader: 'file-loader?name=[path][name].[ext]'
   }
 ];

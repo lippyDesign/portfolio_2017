@@ -1,0 +1,22 @@
+// FOOTER
+.footer {
+  background-color: #333 !important;
+  color: #fff !important;
+  margin-top: 8px;
+  padding: 27px;
+  margin-bottom: 73px;
+  @media(min-width: 875px) {
+    margin-bottom: 7px;
+  }
+}
+.footer p {
+  margin-bottom: 5px;
+}
+.footerSmallText {
+  font-size: 14px;
+  margin-top: 5px;
+  color: #E8EBF0;
+}
+.footerIcons i {
+  padding: 5px;
+}

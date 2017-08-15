@@ -2,6 +2,7 @@ import React from 'react';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import Subheader from 'material-ui/Subheader';
+import Paper from 'material-ui/Paper';
 
 import ContactForm from './ContactForm';
 import SocialIcons from './SocialIcons';
@@ -43,7 +44,7 @@ export default class extends React.Component {
 
   render() {
     return <div className="contactPage">
-      <p className='textCenter'>I'm glad you stopped by. Please feel free to reach out to me with any questions you might have.</p>
+      <h3 className='textCenter'>I'm glad you stopped by. Please feel free to reach out to me with any questions you might have.</h3>
       <div className="contactInnerWrapper">
         <section className="socialWrapper">
           <div>

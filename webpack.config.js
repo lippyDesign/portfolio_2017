@@ -13,6 +13,10 @@ loaders.push({
   test: /\.scss$/,
   loaders: ['style-loader', 'css-loader?importLoaders=1', 'sass-loader'],
   exclude: ['node_modules']
+},
+{
+  test: /\.pdf$/,
+  loaders: ['file-loader']
 });
 
 module.exports = {

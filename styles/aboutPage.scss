@@ -1,0 +1,153 @@
+.summary, .skillsAndEducationSection {
+  display: flex;
+  @media(max-width: 875px) {
+    flex-wrap: wrap;
+  }
+}
+.aboutPicCard {
+  padding: 10px;
+  margin-right: 4px;
+  height: 450px;
+  width: 450px;
+  @media(max-width: 875px) {
+    width: 100%;
+    height: auto;
+    margin-right: 0;
+  }
+}
+.aboutDescription {
+  padding: 10px;
+  margin-left: 4px;
+  flex: 1;
+  @media(max-width: 875px) {
+    margin-left: 0;
+    margin-top: 8px;
+    padding-bottom: 50px;
+  }
+}
+.aboutSectionIcons {
+  margin: 50px 0;
+  text-align: center;
+  @media(max-width: 1008px) {
+    margin: 10px 0;
+  }
+}
+.aboutSectionIcons i {
+  color: #555 !important;
+}
+.resumeButtonWrapper {
+  text-align: center;
+}
+.skills, .courses, .education {
+  padding: 10px;
+  flex: 1;
+  margin-top: 8px;
+  @media(max-width: 875px) {
+    width: 100%;
+    flex: auto;
+  }
+}
+.skillsAndCollegeWrapper {
+  flex: 2;
+}
+.courses {
+  margin-left: 8px;
+  @media(max-width: 875px) {
+    margin-left: 0;
+    padding-bottom: 50px;
+  }
+}
+.skillItemsWrapper {
+  @include standard-flex;
+}
+
+.skillItem {
+  text-align: center;
+  margin: 5px;
+  padding: 5px;
+  flex: 1;
+}
+.skillItem img {
+  width: 50px;
+  border-radius: 3px;
+}
+.skillItem p {
+  margin-top: 3px;
+  color: #555555;
+}
+.bigEducationItem {
+  @media(max-width: 397px) {
+    padding-left: 0 !important;
+  }
+}
+.fa-university {
+  @media(max-width: 397px) {
+    display: none;
+    visibility: hidden;
+  }
+}
+.courseItem {
+  margin-top: 5px;
+  font-size: 14px;
+  @media(max-width: 1157px) {
+    margin-top: 3px;
+    font-size: 13px;
+  }
+  @media(max-width: 875px) {
+    font-size: 14px;
+  }
+}
+.coursesSpan {
+  @media(max-width: 1157px) {
+    display: block;
+    padding-left: 15px;
+    color: #555;
+  }
+}
+.fa-certificate, .fa-briefcase {
+  color: #555;
+}
+.workExperienceGraph {
+  padding: 10px;
+  margin-top: 8px;
+}
+.workExperienceWrapper {
+  padding: 10px;
+  margin-top: 8px;
+}
+.workExperienceSummary {
+  display: flex;
+  @media(max-width: 1200px) {
+    flex-wrap: wrap;
+  }
+}
+.workExperienceItem {
+  padding: 5px;
+  margin: 5px;
+  flex: 1;
+  @media(max-width: 1200px) {
+    width: 45%;
+    flex: auto;
+  }
+  @media(max-width: 875px) {
+    width: 100%;
+    margin-top: 20px;
+  }
+}
+.workExperienceItemHeader {
+  @include standard-flex($justify-content: space-between);
+}
+.workDates {
+  color: #555;
+}
+.workExperienceGraph {
+  overflow-x: hidden;
+}
+.aboutGraphWrapper {
+  width: 102%;
+  height: 400px;
+}
+.recharts-default-legend {
+  position: relative;
+  left: 40px;
+}

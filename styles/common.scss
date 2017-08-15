@@ -1,0 +1,40 @@
+html, body, #app {
+  height: 100%;
+}
+body, #app, .App {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+body {
+  background-color: #F5F5F5;
+}
+h3 {
+  font-size: 25px;
+  font-weight: 100;
+  margin-bottom: 0;
+}
+h4 {
+  font-weight: 300;
+  margin-top: 3px;
+}
+a {
+  text-decoration: none;
+}
+.App {
+  min-height: 100%;
+  flex: 1 auto;
+}
+.content {
+  flex: 1 0 auto;
+  margin-top: 8px;
+}
+.textCenter {
+  text-align: center;
+}
+.subHeader {
+  @media(max-width: 875px) {
+    text-align: center;
+    padding: 0 !important;
+  }
+}

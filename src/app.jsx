@@ -7,7 +7,7 @@ import '../styles/index.scss';
 
 import Navi from './components/Navi';
 import HomePage from './components/HomePage';
-import AboutPage from './components/AboutPage';
+import AboutPage from './components/about/AboutPage';
 import PortfolioPage from './components/PortfolioPage';
 import ContactPage from './components/ContactPage';
 import Footer from './components/Footer';
@@ -27,12 +27,12 @@ class App extends React.Component {
       <MuiThemeProvider>
       <div className="App">
         <Navi menuItems={MENU_ITEMS} />
-        <Paper zDepth={1} className="content">
+        <div className="content">
           <Route exact path="/" component={HomePage} />
           <Route path="/about" component={AboutPage} />
           <Route path="/portfolio" component={PortfolioPage} />
           <Route path="/contact" component={ContactPage} />
-        </Paper>
+        </div>
         <Footer />
       </div>
       </MuiThemeProvider>
