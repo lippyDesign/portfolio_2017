@@ -40,7 +40,7 @@ export default class extends Component {
     </div>);
   }
   renderWorkExperience() {
-    return workExperience.map(({ name, title, startDate, endDate, description }) => <div key={name} className="workExperienceItem">
+    return workExperience.reverse().map(({ name, title, startDate, endDate, description }) => <div key={name} className="workExperienceItem">
       <div className="workExperienceItemHeader">
         <i className="fa fa-briefcase fa-2x" aria-hidden="true"></i>
         <span className="workDates">{`${startDate} - ${endDate}`}</span>
