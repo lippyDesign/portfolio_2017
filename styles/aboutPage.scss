@@ -1,4 +1,4 @@
-.summary, .skillsAndEducationSection {
+.summary {
   display: flex;
   @media(max-width: 875px) {
     flex-wrap: wrap;
@@ -38,17 +38,16 @@
 .resumeButtonWrapper {
   text-align: center;
 }
-.skills, .courses, .education {
-  padding: 10px;
-  flex: 1;
-  margin-top: 8px;
+.educationSection {
+  display: flex;
   @media(max-width: 875px) {
-    width: 100%;
-    flex: auto;
+    display: block;
   }
 }
-.skillsAndCollegeWrapper {
-  flex: 2;
+.skills, .courses, .education {
+  padding: 10px;
+  flex-grow: 1;
+  margin-top: 8px;
 }
 .courses {
   margin-left: 8px;
@@ -65,7 +64,7 @@
   text-align: center;
   margin: 5px;
   padding: 5px;
-  flex: 1;
+  flex-grow: 1;
 }
 .skillItem img {
   width: 50px;
@@ -97,13 +96,13 @@
     font-size: 14px;
   }
 }
-.coursesSpan {
-  @media(max-width: 1157px) {
-    display: block;
-    padding-left: 15px;
-    color: #555;
-  }
-}
+// .coursesSpan {
+//   @media(max-width: 1157px) {
+//     display: block;
+//     padding-left: 15px;
+//     color: #555;
+//   }
+// }
 .fa-certificate, .fa-briefcase {
   color: #555;
 }

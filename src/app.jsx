@@ -33,7 +33,9 @@ class App extends React.Component {
           <Route path="/portfolio" component={PortfolioPage} />
           <Route path="/contact" component={ContactPage} />
         </div>
-        <Footer />
+        <div className="footerWrapper">
+          <Footer />
+        </div>
       </div>
       </MuiThemeProvider>
     </Router>

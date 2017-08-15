@@ -36,11 +36,11 @@ export default class extends Component {
   }
   renderSmallEducation() {
     return courses.map(({ name, platform, year }) => <div className='courseItem' key={name}>
-      <i className="fa fa-certificate" aria-hidden="true"></i> {name} <span className="coursesSpan">{`${platform}, ${year}`}</span>
+      <i className="fa fa-certificate" aria-hidden="true"></i> {name}. <span className="coursesSpan">{`${platform}, ${year}`}</span>
     </div>);
   }
   renderWorkExperience() {
-    return workExperience.reverse().map(({ name, title, startDate, endDate, description }) => <div key={name} className="workExperienceItem">
+    return workExperience.map(({ name, title, startDate, endDate, description }) => <div key={name} className="workExperienceItem">
       <div className="workExperienceItemHeader">
         <i className="fa fa-briefcase fa-2x" aria-hidden="true"></i>
         <span className="workDates">{`${startDate} - ${endDate}`}</span>
@@ -72,31 +72,28 @@ export default class extends Component {
           </div>
         </Paper>
       </section>
-      <section className="skillsAndEducationSection">
-        <div className="skillsAndCollegeWrapper">
-          <Paper className="skills">
-            <h3>Technical Skills</h3>
-            <h4>Some Of the Technologies I Know</h4>
-            <div className="skillItemsWrapper">
-              {this.renderSkills()}
-            </div>
-          </Paper>
-          <Paper className="education">
-            <h3>Education & Diplomas</h3>
-            <h4>What I Have Done In My Academic Career</h4>
-            <List>
-              {this.renderBigEducation()}
-            </List>
-          </Paper>
-        </div>
-          <Paper className="courses">
-            <h3>Courses & Certificates</h3>
-            <h4>How I Further Enhanced My Academic Knowledge</h4>
-            <div className='courseItemWrapper'>
-              {this.renderSmallEducation()}
-            </div>
-          </Paper>
-        
+        <Paper className="skills">
+          <h3>Technical Skills</h3>
+          <h4>Some Of the Technologies I Know</h4>
+          <div className="skillItemsWrapper">
+            {this.renderSkills()}
+          </div>
+        </Paper>
+      <section className="educationSection">
+        <Paper className="education">
+          <h3>Education & Diplomas</h3>
+          <h4>What I Have Done In My Academic Career</h4>
+          <List>
+            {this.renderBigEducation()}
+          </List>
+        </Paper>
+        <Paper className="courses">
+          <h3>Courses & Certificates</h3>
+          <h4>How I Further Enhanced My Academic Knowledge</h4>
+          <div className='courseItemWrapper'>
+            {this.renderSmallEducation()}
+          </div>
+        </Paper>
       </section>
       <section className="workExperience">
         <Paper className="workExperienceGraph">

@@ -1,5 +1,9 @@
-html, body, #app {
+// html, body, #app {
+//   min-height: 100%;
+// }
+html, body {
   height: 100%;
+  min-height: 100%;
 }
 body, #app, .App {
   min-height: 100%;
@@ -8,6 +12,7 @@ body, #app, .App {
 }
 body {
   background-color: #F5F5F5;
+  margin-bottom: 0;
 }
 h3 {
   font-size: 25px;
