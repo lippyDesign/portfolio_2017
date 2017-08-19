@@ -8,8 +8,8 @@ import '../styles/index.scss';
 import Navi from './components/Navi';
 import HomePage from './components/HomePage';
 import AboutPage from './components/about/AboutPage';
-import PortfolioPage from './components/PortfolioPage';
-import ContactPage from './components/ContactPage';
+import PortfolioPage from './components/portfolio/PortfolioPage';
+import ContactPage from './components/contact/ContactPage';
 import Footer from './components/Footer';
 
 const MENU_ITEMS = [

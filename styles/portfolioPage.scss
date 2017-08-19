@@ -1,0 +1,38 @@
+.portfolioPageHeader {
+  padding: 25px 10px;
+  //@include standard-flex;
+  display: flex;
+  h3 {
+    margin: 0;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    right: 0px;
+    @media(max-width: 875px) {
+      font-size: 20px;
+    }
+    @media(max-width: 618px) {
+      text-align: right;
+      right: 30px;
+    }
+    span {
+      @media(max-width: 500px) {
+        display: none;
+        visibility: hidden;
+      }
+    }
+  }
+  > div {
+    height: 100%;
+    //@include standard-flex($align-items: flex-start);
+    display: flex;
+    margin-top: -15px;
+  }
+}
+.projectsContainer {
+  margin-top: 8px;
+  padding: 50px 10px;
+}
+.projectImage {
+  cursor: pointer;
+}

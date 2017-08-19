@@ -35,9 +35,6 @@
 .aboutSectionIcons i {
   color: #555 !important;
 }
-.resumeButtonWrapper {
-  text-align: center;
-}
 .educationSection {
   display: flex;
   @media(max-width: 875px) {
@@ -96,13 +93,6 @@
     font-size: 14px;
   }
 }
-// .coursesSpan {
-//   @media(max-width: 1157px) {
-//     display: block;
-//     padding-left: 15px;
-//     color: #555;
-//   }
-// }
 .fa-certificate, .fa-briefcase {
   color: #555;
 }

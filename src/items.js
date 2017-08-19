@@ -138,174 +138,162 @@ export const courses = [
     {
         name: "Node & React: Fullstack Web Development",
         platform: 'Udemy',
-        year: '2017',
-        image: require('./assets/images/udemy.png')
+        year: '2017'
     },
     {
         name: "C++ & Unreal Engine",
         platform: 'Udemy',
-        year: '2017',
-        image: require('./assets/images/udemy.png')
+        year: '2017'
     },
     {
         name: "React Native: Advanced Concepts",
         platform: 'Udemy',
-        year: '2017',
-        image: require('./assets/images/udemy.png')
+        year: '2017'
     },
     {
         name: "GraphQL with React: The Complete Guide",
         platform: 'Udemy',
-        year: '2017',
-        image: require('./assets/images/udemy.png')
+        year: '2017'
     },
     {
         name: "Python for Data Structures and Algorithms",
         platform: 'Udemy',
-        year: '2017',
-        image: require('./assets/images/udemy.png')
+        year: '2017'
     },
     {
         name: "Data Structures in JavaScript",
         platform: 'Udemy',
-        year: '2017',
-        image: require('./assets/images/udemy.png')
+        year: '2017'
     },
     {
         name: "Webpack 2: The Complete Guide",
         platform: 'Udemy',
-        year: '2017',
-        image: require('./assets/images/udemy.png')
+        year: '2017'
     },
     {
         name: "The Complete Guide to Mongo DB",
         platform: 'Udemy',
-        year: '2016',
-        image: require('./assets/images/udemy.png')
+        year: '2016'
     },
     {
         name: "Using Modern JavaScript Today",
         platform: 'Udemy',
-        year: '2016',
-        image: require('./assets/images/udemy.png')
+        year: '2016'
     },
     {
         name: "Advanced Javascript",
         platform: 'Udemy',
-        year: '2016',
-        image: require('./assets/images/udemy.png')
+        year: '2016'
     },
     {
         name: "JavaScript: Understanding the Weird Parts",
         platform: 'Udemy',
-        year: '2016',
-        image: require('./assets/images/udemy.png')
+        year: '2016'
     },
     {
         name: "ES6 Javascript: The Complete Guide",
         platform: 'Udemy',
-        year: '2016',
-        image: require('./assets/images/udemy.png')
+        year: '2016'
     },
     {
         name: "Meteor and React for Realtime Apps",
         platform: 'Udemy',
-        year: '2016',
-        image: require('./assets/images/udemy.png')
+        year: '2016'
     },
     {
         name: 'Modern React with Redux',
         platform: 'Udemy',
-        year: '2016',
-        image: require('./assets/images/udemy.png')
+        year: '2016'
     },
     {
         name: 'React Native and Redux',
         platform: 'Udemy',
-        year: '2016',
-        image: require('./assets/images/udemy.png')
+        year: '2016'
     },
     {
         name: 'Build Apps with React Native',
         platform: 'Udemy',
-        year: '2016',
-        image: require('./assets/images/udemy.png')
+        year: '2016'
     },
     {
         name: 'Computer Science Using Python',
         platform: 'EDX',
-        year: '2016',
-        image: require('./assets/images/udemy.png')
+        year: '2016'
     },
     {
         name: 'Swift programming for iOS with Parse',
         platform: 'Udemy',
-        year: '2015',
-        image: require('./assets/images/udemy.png')
+        year: '2015'
     },
     {
         name: 'HTML, CSS, JS, Angular.Js, React.Js',
         platform: 'CodeSchool',
-        year: '2015',
-        image: require('./assets/images/udemy.png')
+        year: '2015'
     },
 ]
 export const projects = [
     {
         id: 'p0',
-        technology: ['Node JS', 'React JS', 'Mongo DB', 'GraphQL'],
+        technology: ['Node', 'React', 'Mongo DB', 'GraphQL'],
         url: 'https://thawing-mesa-75366.herokuapp.com',
-        img: './images/petClothes.png',
+        img: require('./assets/images/petClothes.png'),
         title: 'Whiskers & Paws',
-        description: 'Full E-Commerce website for selling pet accessories. It has a full admin side where the admins can manage orders, edit items for sale and review profits.'
-    },
-    {
-        id: 'p1',
-        technology: ['Meteor JS', 'React JS', 'Mongo DB'],
-        url: 'http://cpabucket.meteorapp.com/',
-        img: './images/cpaBucketImage.png',
-        title: 'CPA Bucket',
-        description: 'Social study platform. After registering, users can take practice tests in all 4 CPA sections, track their progress, add thier own questions and much more.'
+        description: 'Full E-Commerce website for selling pet accessories. It has a full admin side where the admins can manage orders, edit items for sale and review profits.',
+        featured: true
     },
     {
         id: 'p2',
-        technology: ['Meteor JS', 'React JS', 'Mongo DB'],
+        technology: ['Meteor', 'React', 'Mongo DB'],
         url: 'http://battleship-game.meteorapp.com/',
-        img: './images/battleship.png',
+        img: require('./assets/images/battleship.png'),
         title: 'Battleship',
-        description: 'Computerized version of the popular board game. After registering a user can play against computer or another human opponent.'
+        description: 'Computerized version of the popular board game. After registering a user can play against computer or another human opponent.',
+        featured: false
     },
      {
         id: 'p8',
-        technology: ['React JS', 'Redux', 'Node'],
+        technology: ['React', 'Redux', 'Node'],
         url: 'https://cool-api-app.herokuapp.com/',
-        img: './images/cool-api-app.png',
+        img: require('./assets/images/cool-api-app.png'),
         title: 'Trending Now',
-        description: 'An application that fetches current most popular posts from various social media sites and puts them together on one screen.'
+        description: 'An application that fetches current most popular posts from various social media sites and puts them together on one screen.',
+        featured: false
+    },
+    {
+        id: 'p1',
+        technology: ['Meteor', 'React', 'Mongo DB'],
+        url: 'http://cpabucket.meteorapp.com/',
+        img: require('./assets/images/cpaBucketImage.png'),
+        title: 'CPA Bucket',
+        description: 'Social study platform. After registering, users can take practice tests in all 4 CPA sections, track their progress, add thier own questions and much more.',
+        featured: true
     },
     {
         id: 'p4',
-        technology: ['React JS', 'Redux'],
+        technology: ['React', 'Redux'],
         url: 'http://money-exchange.herokuapp.com/',
-        img: './images/currency-exchange.png',
+        img: require('./assets/images/currency-exchange.png'),
         title: 'Currency',
-        description: 'An app makes API requests to get the current currency exchange rates. The app then builds an interactive list of available rates with graphs.'
+        description: 'An app makes API requests to get the current currency exchange rates. The app then builds an interactive list of available rates with graphs.',
+        featured: false
     },
     {
         id: 'p6',
-        technology: ['Meteor JS', 'React JS', 'Mongo DB'],
+        technology: ['Meteor', 'React', 'Mongo DB'],
         url: 'http://lipi-todos-organizer.meteorapp.com/',
-        img: './images/todos.png',
+        img: require('./assets/images/todos.png'),
         title: 'Todos Organizer',
-        description: 'Cool todos aorganizer. After registering a user can add tasks, select who can view the tasks, delete tasks and complete tasks.'
+        description: 'Cool todos aorganizer. After registering a user can add tasks, select who can view the tasks, delete tasks and complete tasks.',
+        featured: false
     },
     {
         id: 'p7',
-        technology: ['JavaScript ES2015', 'React'],
+        technology: ['React', 'LESS'],
         url: 'https://aqueous-waters-77895.herokuapp.com',
-        img: './images/clock.png',
+        img: require('./assets/images/clock.png'),
         title: 'Clock',
-        description: 'A cool clock that displays time and date in analog and digital formats. The user can choose between standard time, military time or stopwatch.'
+        description: 'A cool clock that displays time and date in analog and digital formats. The user can choose between standard time, military time or stopwatch.',
+        featured: true
     }
 ]
 export const contactInfo = {

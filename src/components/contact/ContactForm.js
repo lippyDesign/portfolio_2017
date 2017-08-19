@@ -1,12 +1,28 @@
 import React from 'react';
-import Subheader from 'material-ui/Subheader';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
+import CircularProgress from 'material-ui/CircularProgress';
 
 export default class extends React.Component {
+  renderButtonOrSpinner() {
+    // display activity indicator instead of button while sending of email is in progres
+    if (this.props.sendingInProgress) {
+      return <div className='spinnerWrapper'>
+        <CircularProgress />
+      </div>;
+    }
+    return <RaisedButton
+      primary
+      fullWidth
+      label="Send Message"
+      icon={<i style={styles.iconStyle} className="fa fa-paper-plane" aria-hidden="true"></i>}
+      style={styles.buttonStyle}
+      onClick={this.props.onFormSubmit}
+    />;
+  }
   render() {
     return <form style={styles.formStyle} onSubmit={this.props.onFormSubmit}>
-      <Subheader className='subHeader'>Send an Email</Subheader>
+      <h4 className='textCenter'>Send an Email</h4>
       <TextField
         hintText="your@email.com"
         floatingLabelText="Email"
@@ -33,14 +49,7 @@ export default class extends React.Component {
         value={this.props.message}
         onChange={event => this.props.textChanged(event.target.value, 'message')}
       />
-      <RaisedButton
-        primary
-        fullWidth
-        label="Send Message"
-        icon={<i style={styles.iconStyle} className="fa fa-paper-plane" aria-hidden="true"></i>}
-        style={styles.buttonStyle}
-        onClick={this.props.onFormSubmit}
-      />
+      {this.renderButtonOrSpinner()}
     </form>;
   }
 }

@@ -11,8 +11,6 @@ import { workExperience, education, courses, technicalSkills, icons, about } fro
 import SocialIcons from '../SocialIcons';
 import ExperienceGraph from './ExperienceGraph';
 
-import resume from './resume.pdf'
-
 export default class extends Component {
   renderSkills() {
     return technicalSkills.map(({ name, image, url }) => <div className='skillItem' key={name}>
@@ -65,10 +63,6 @@ export default class extends Component {
           <p>{about.details}</p>
           <div className="aboutSectionIcons">
             <SocialIcons icons={icons} />
-          </div>
-          <div className="resumeButtonWrapper">
-            <RaisedButton label="Download Printable Resume" primary icon={<FontIcon className="fa fa-file-pdf-o" />} />
-            <a href={resume} download="resume">Click to Download My Resume</a>
           </div>
         </Paper>
       </section>
