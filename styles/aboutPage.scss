@@ -1,3 +1,8 @@
+.aboutPage {
+  h3 {
+    color: #FF676D;
+  }
+}
 .summary {
   display: flex;
   @media(max-width: 875px) {
@@ -9,6 +14,7 @@
   margin-right: 4px;
   height: 450px;
   width: 450px;
+  background-color:lighten(#71C7EC, 5%) !important;
   @media(max-width: 875px) {
     width: 100%;
     height: auto;
@@ -19,6 +25,7 @@
   padding: 10px;
   margin-left: 4px;
   flex: 1;
+  background-color:#71C7EC !important;
   @media(max-width: 875px) {
     margin-left: 0;
     margin-top: 8px;
@@ -33,7 +40,7 @@
   }
 }
 .aboutSectionIcons i {
-  color: #555 !important;
+  color: black !important;
 }
 .educationSection {
   display: flex;
@@ -42,15 +49,31 @@
   }
 }
 .skills, .courses, .education {
+  background-color:darken(#107DAC, 5%) !important;
   padding: 10px;
   flex-grow: 1;
   margin-top: 8px;
+  h4 {
+    color: lighten(burlywood, 5%);
+  }
+}
+.skills {
+  background: #1EBBD7 !important;
+  h4 {
+    color: black;
+  }
 }
 .courses {
   margin-left: 8px;
+  background-color: #005073 !important;
+  color: #fff !important;
+  font-weight: 100;
+  padding-bottom: 50px;
   @media(max-width: 875px) {
     margin-left: 0;
-    padding-bottom: 50px;
+  }
+  h4 {
+    color: burlywood;
   }
 }
 .skillItemsWrapper {
@@ -69,14 +92,20 @@
 }
 .skillItem p {
   margin-top: 3px;
-  color: #555555;
+  color: black;
 }
 .bigEducationItem {
+  font-weight: 100;
   @media(max-width: 397px) {
     padding-left: 0 !important;
   }
+  div {
+    color: #fff !important;
+  }
 }
 .fa-university {
+  color: lighten(burlywood, 5%) !important;
+  font-weight: 100;
   @media(max-width: 397px) {
     display: none;
     visibility: hidden;
@@ -94,13 +123,17 @@
   }
 }
 .fa-certificate, .fa-briefcase {
-  color: #555;
+  color: burlywood;
 }
 .workExperienceGraph {
+  background-color:lighten(#71C7EC, 20%) !important;
   padding: 10px;
   margin-top: 8px;
 }
 .workExperienceWrapper {
+  color: #fff !important;
+  font-weight: 100;
+  background-color:#005073 !important;
   padding: 10px;
   margin-top: 8px;
 }
@@ -127,7 +160,7 @@
   @include standard-flex($justify-content: space-between);
 }
 .workDates {
-  color: #555;
+  color: burlywood;
 }
 .workExperienceGraph {
   overflow-x: hidden;

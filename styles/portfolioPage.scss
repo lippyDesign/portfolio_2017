@@ -6,7 +6,7 @@
 .portfolioPageHeader {
   padding: 25px 10px;
   display: flex;
-  background-color: lighten(#f8b195, 5%) !important;
+  background-color: lightgrey !important;
   h3 {
     margin: 0;
     position: absolute;
@@ -41,7 +41,7 @@
 }
 .projectsOuterContainer {
   margin-top: 8px;
-  background-color: lighten(#f8b195, 4%) !important;
+  background-color:lightgrey !important;
   @include standard-flex;
   flex: 1 0 auto;
 }
@@ -49,6 +49,9 @@
   @include standard-flex;
   padding: 50px 10px;
   max-width: 1350px;
+  @media(max-width: 668px) {
+    padding: 10px 10px 50px 10px;
+  }
 }
 .projectCard {
   margin: 8px;
@@ -60,6 +63,10 @@
   cursor: pointer;
   width: 300px !important;
   height: 300px;
+  @media(max-width: 668px) {
+    width: auto !important;
+    height: auto;
+  }
 }
 .cardActionsWrapper {
   @include standard-flex($justify-content: flex-end)
