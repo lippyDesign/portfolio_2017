@@ -242,6 +242,15 @@ export const projects = [
         featured: true
     },
     {
+        id: 'p1',
+        technology: ['Meteor', 'React', 'Mongo DB'],
+        url: 'http://cpabucket.meteorapp.com/',
+        img: require('./assets/images/cpaBucketImage.png'),
+        title: 'CPA Bucket',
+        description: 'Social study platform. After registering, users can take practice tests in all 4 CPA sections, track their progress, add thier own questions and much more.',
+        featured: true
+    },
+    {
         id: 'p2',
         technology: ['Meteor', 'React', 'Mongo DB'],
         url: 'http://battleship-game.meteorapp.com/',
@@ -260,20 +269,11 @@ export const projects = [
         featured: false
     },
     {
-        id: 'p1',
-        technology: ['Meteor', 'React', 'Mongo DB'],
-        url: 'http://cpabucket.meteorapp.com/',
-        img: require('./assets/images/cpaBucketImage.png'),
-        title: 'CPA Bucket',
-        description: 'Social study platform. After registering, users can take practice tests in all 4 CPA sections, track their progress, add thier own questions and much more.',
-        featured: true
-    },
-    {
         id: 'p4',
-        technology: ['React', 'Redux'],
+        technology: ['React', 'Redux', 'Node'],
         url: 'http://money-exchange.herokuapp.com/',
         img: require('./assets/images/currency-exchange.png'),
-        title: 'Currency',
+        title: 'Currency Exchange',
         description: 'An app makes API requests to get the current currency exchange rates. The app then builds an interactive list of available rates with graphs.',
         featured: false
     },
